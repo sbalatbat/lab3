@@ -3,7 +3,16 @@ import java.util.List;
 
 interface StringChecker { boolean checkString(String s); }
 
-class ListExamples {
+class ListExamples implements StringChecker {
+  private static final int STRING_LENGTH_MIN = 5;
+
+  // implemented method
+  public boolean checkString(String s) {
+    if (s.length() > STRING_LENGTH_MIN) {
+      return true;
+    }
+    return false;
+  }
 
   // Returns a new list that has all the elements of the input list for which
   // the StringChecker returns true, and not the elements that return false, in
